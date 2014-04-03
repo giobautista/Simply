@@ -1,0 +1,19 @@
+{{!< default}}
+{{#foreach posts}}
+      <div class="posts">
+        <div class="post-header">
+          <span class="post-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">Written {{date published_at timeago="true"}} by <abbr data-toggle="popover" title="{{author.name}}" data-content="{{author.bio}}">{{author.name}}</abbr></time>
+          </span>
+          <h1><a href="{{url}}">{{title}}</a></h1>
+        </div><!-- /.post-header -->
+
+        <div class="post-body">
+          <p>{{excerpt words="50"}}&hellip;</p>
+        </div>
+      </div>
+{{/foreach}}
+
+    {{#if pagination}}
+      {{pagination}}
+    {{/if}}

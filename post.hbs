@@ -1,0 +1,24 @@
+{{!< default}}
+{{#post}}
+      <div class="posts">
+        <div class="post-header">
+          <span class="post-meta">
+            <time datetime="{{date format="YYYY-MM-DD"}}">Written {{date published_at timeago="true"}} by <abbr data-toggle="popover" title="{{author.name}}" data-content="{{author.bio}}">{{author.name}}</abbr></time>
+          </span>
+          <h1>{{{title}}}</h1>
+        </div><!-- /.post-header -->
+
+        <div class="post-body">
+        {{content}}
+        </div>
+      </div>
+
+      <div class="article-share-social">
+          <span class="article-meta">Spread the love</span>
+          <div class="social-icon">
+              <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><span class="icon-twitter"></span></a>
+              <a href="https://facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span class="icon-facebook"></span></a>
+              <a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><span class="icon-googleplus"></span></a>
+          </div>
+      </div>
+  {{/post}}
