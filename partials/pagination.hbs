@@ -1,7 +1,9 @@
-<nav class="pagination" role="navigation">
-  {{#if prev}}
-	<a class="newer-posts" href="{{pageUrl prev}}">&laquo; Newer Articles</a>
-  {{/if}}
-	<span class="page-number">Page {{page}} of {{pages}}</span>
-	<a class="older-posts" href="{{pageUrl next}}">Older Articles &raquo;</a>
+<nav class="pagination" role="pagination">
+    {{#if prev}}
+        <a class="newer-posts" href="{{pageUrl prev}}">&laquo; Newer Articles</a>
+    {{/if}}
+   <span class="page-number">Page {{page}} of {{pages}}</span>
+    {{#if next}}
+        <a class="older-posts" href="{{pageUrl next}}">Older Articles &raquo;</a>
+    {{/if}}
 </nav>
