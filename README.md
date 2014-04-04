@@ -2,6 +2,12 @@
 
 A theme for [Ghost](http://github.com/tryghost/ghost/).
 
+## [Demo](https://kidneyfor.me)
+
+## Screenshot
+
+![Simply Theme Screenshot](screenshot.jpg)
+
 ## Copyright & License
 
 Copyright (C) 2014 Gio Bautista - Released under the MIT License.
