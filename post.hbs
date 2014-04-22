@@ -11,6 +11,11 @@
         <div class="post-body">
         {{content}}
         </div>
+        {{#if tags}}
+        <ul class="list-inline post-meta post-tags">
+          {{#foreach tags}}<li>{{name}}</li>{{/foreach}}
+        </ul>
+        {{/if}}
       </div>
 
       <div class="article-share-social">
@@ -21,4 +26,44 @@
               <a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><span class="icon-googleplus"></span></a>
           </div>
       </div>
+
+      <section class="post-author media" {{#if author.cover}}style="background-image: url({{author.cover}})"{{/if}}>
+        <span class="pull-left">
+          <img class="media-object" src="{{author.image}}" alt="{{author.name}}">
+        </span>
+        <div class="media-body">
+          <h4 class="media-heading">{{author.name}}</h4>
+          <section class="post-author-bio">
+            {{author.bio}}
+          </section>
+        </div>
+      </section>
   {{/post}}
+
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+
+      <script type="text/javascript">
+        {{> custom/config}}
+
+        {{#post}}
+          var disqus_identifier = '{{id}}';
+        {{/post}}
+
+        (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+        function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+        t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+        t.src='//www.google-analytics.com/analytics.js';
+        z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+        ga('create',ga_ua);ga('send','pageview');
+              
+        if(typeof DISQUS !== 'object') {
+          (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+        }
+      </script>

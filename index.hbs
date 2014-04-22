@@ -5,12 +5,17 @@
           <span class="post-meta">
             <time datetime="{{date format="YYYY-MM-DD"}}">Written {{date published_at timeago="true"}} by <abbr data-toggle="popover" title="{{author.name}}" data-content="{{author.bio}}">{{author.name}}</abbr></time>
           </span>
-          <h1><a href="{{url}}">{{title}}</a></h1>
+          <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
         </div><!-- /.post-header -->
 
         <div class="post-body">
-          <p>{{excerpt words="50"}}&hellip;</p>
+          <p>{{excerpt words="45"}}&hellip; <a class="btn btn-xs btn-default" href="{{url}}" title="{{title}}">Read more &rarr;</a></p>
         </div>
+        {{#if tags}}
+        <ul class="list-inline post-meta post-tags">
+          {{#foreach tags}}<li>{{name}}</li>{{/foreach}}
+        </ul>
+        {{/if}}
       </div>
 {{/foreach}}
 
