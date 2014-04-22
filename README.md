@@ -6,7 +6,7 @@ A theme for [Ghost](http://github.com/tryghost/ghost/).
 
 ## Screenshot
 
-![Simply Theme Screenshot](screenshot.jpg)
+![Simply Theme Screenshot](screenshot.png)
 
 ## Copyright & License
 
